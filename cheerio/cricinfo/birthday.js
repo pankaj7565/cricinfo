@@ -9,7 +9,6 @@ request(
   );
 
   let batsmanprofileurl = [];
-
 function requestCallback(err, res, html) {
 const $ = cheerio.load(html);
 
@@ -52,8 +51,8 @@ function fetchdateofbirth(index,err,res,html){
     // request(batsmanprofileurl[index].url,)
     const $ = cheerio.load(html);
     const palyerDateofBirth = $($('h5.player-card-description.gray-900')[1]).text();
-    batsmanprofileurl[index]["Date of birth"] = palyerDateofBirth.split(",")[0];
-    if(count ==batsmanprofileurl.length-1){
+    batsmanprofileurl[index]["Date of birth"] = palyerDateofBirth;//palyerDateofBirth.split(",")[0];
+    if(count ==batsmanprofileurl.length){
         console.log(batsmanprofileurl);
     }
 
